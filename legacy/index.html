@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>반 려 견 동 반 카 페</title>
+        <style>
+            * {
+                padding: 0;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            td {
+                font-size: 12px;
+            }
+            body {
+                font-family: "맑은고딕";
+                margin: 0;
+                padding: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            #wrap {
+                width: 1280px;
+                background-repeat: no-repeat;
+                margin: 20px auto;
+                padding: 0px;
+                overflow: auto;
+            }
+            #top {
+                width: 1280px;
+                height: 120px;
+            }
+            #logo {
+                float: left;
+            }
+            #top1 {
+                width: 920px;
+                height: 80px;
+                text-align: right;
+                float: right;
+            }
+            .menu1 {
+                font-size: 10px;
+                margin: 0 10px;
+            }
+            .menu2 {
+                font-family: "둥근모꼴";
+                margin: 0 25px;
+            }
+            #top2 {
+                width: 920px;
+                height: 40px;
+                text-align: right;
+                float: right;
+            }
+            #main {
+                width: 1280px;
+                height: 1000px;
+                float: left;
+            }
+            .slideBox {
+                width: 1280px;
+                float: left;
+                margin: 5px 0;
+            }
+            .leftBtn {
+                width: 100px;
+                height: 480px;
+                overflow: hidden;
+                float: left;
+            }
+            .centerBox {
+                float: left;
+            }
+            .rightBtn {
+                width: 100px;
+                height: 480px;
+                overflow: hidden;
+                float: left;
+            }
+            #containerAside {
+                width: 340px;
+                height: 480px;
+                border: 1px solid #cccccc;
+                padding: 5px;
+                margin: 0 5px;
+                float: left;
+                overflow: hidden;
+            }
+            #boxHead {
+                margin: 25px 0;
+            }
+            .boxTitle {
+                font-family: "둥근모꼴";
+            }
+            .textTitle {
+                text-align: left;
+            }
+            .textDate {
+                text-align: center;
+            }
+            #containerCenter {
+                width: 540px;
+                height: 480px;
+                border: 1px solid #cccccc;
+                padding: 5px;
+                float: left;
+                overflow: hidden;
+            }
+            .item {
+                width: 160px;
+                padding: 10px;
+                overflow-x: auto;
+                float: left;
+            }
+            #footer {
+                text-align: center;
+            }
+            .infoText {
+                font-size: 12px;
+            }
+            .rightText {
+                margin: 10px 0;
+                font-size: 8px;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+               var i1 = document.getElementById('img1');
+                i1.src = "image/main01.jpg"
+               var i2 = document.getElementById('img2');
+                i2.src = "image/main02.jpg"
+               var i3 = document.getElementById('img3');
+                i3.src = "image/main03.jpg"
+               var i3 = document.getElementById('img4');
+                i3.src = "image/main04.jpg"
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                var width = $('[data-role="slider"]').attr('data-width');
+                var height = $('[data-role="slider"]').attr('data-height');
+                var count = $('[data-role="slider"] div.mainImg').length;
+            
+                $('[data-role="slider"]').css({
+                    position: 'relative',
+                    overflow: 'hidden',
+                    width: width,
+                    height: height
+                }).find('.imgContainer').css({
+                    position: 'absolute',
+                    width: count * width,
+                    overflow: 'hidden'
+                }).find('.mainImg').css({
+                    width: width,
+                    height: height,
+                    float: 'left'
+                });
+                
+                var currentPage = 0;
+                var changePage = function () {
+                    $('[data-role="slider"] > .imgContainer').animate({
+                        left: -currentPage * width
+                    }, 750);
+                };
+                $('.leftBtn').click(function () {
+                    if (currentPage > 0) {
+                        currentPage = currentPage - 1;
+                        changePage();
+                    }
+                });
+                $('.rightBtn').click(function () {
+                    if (currentPage < count - 1) {
+                        currentPage = currentPage + 1;
+                        changePage();
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="top">
+                <a id="logo" href="index.html"><img src="image/logo.png"/></a>
+                <div id="top1">
+                    <a class="menu1" href="#">로그인</a>
+                    <a class="menu1" href="#">회원가입</a>
+                    <a class="menu1" href="#">마이페이지</a>
+                </div>
+                <div id="top2">
+                    <a class="menu2" href="01_prologue.html">프롤로그</a>
+                    <a class="menu2" href="02_notice.html">공지사항</a>
+                    <a class="menu2" href="03_location.html">오시는길</a>
+                    <a class="menu2" href="04_menu.html">카페메뉴</a>
+                    <a class="menu2" href="05_review.html">방문후기</a>
+                    <a class="menu2" href="06_meeting.html">산책모임</a>
+                    <a class="menu2" href="07_partyroom.html">파티룸예약</a>
+                </div>
+            </header>
+            <section id="main">
+                <div class="slideBox">
+                    <div class="leftBtn">
+                        <a href="#"><img src="image/leftarrow.png" width="100" height="480"/></a>
+                    </div>
+                    <div class="centerBox">
+                        <div data-role="slider" data-width="1080" data-height="480">
+                            <div class="imgContainer">
+                                <div class="mainImg">
+                                    <a href="04_menu.html"><img id="img1" width="1080" height="480"/></a>
+                                </div>
+                                <div class="mainImg">
+                                    <a href="03_location.html"><img id="img2" width="1080" height="480"/></a>
+                                </div>
+                                <div class="mainImg">
+                                    <a href="02_notice.html"><img id="img3" width="1080" height="480"/></a>
+                                </div>
+                                <div class="mainImg">
+                                    <a href="07_partyroom.html"><img id="img4" width="1080" height="480"/></a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="rightBtn">
+                        <a href="#"><img src="image/rightarrow.png" width="100" height="480"/></a>
+                    </div>
+                </div>
+                <div id="containerAside">
+                    <div id="categoryBox">
+                        <div id="boxHead">
+                            <h3 class="boxTitle"><a href="02_notice.html">공지사항</a></h3>
+                        </div>
+                        <table border="0" width="340">
+                            <tbody>
+                                <tr>
+                                    <td class="textTitle"><a href="02_notice.html">sample01</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="02_notice.html">sample02</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="02_notice.html">sample03</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="02_notice.html">sample04</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="02_notice.html">sample05</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="categoryBox">
+                        <div id="boxHead">
+                            <h3 class="boxTitle">이달의 댕댕</h3>
+                        </div>
+                        <div id="bigImgBox">
+                            <img src="image/puppy/puppy%20(1).jpg" width="340" height="200"/>
+                        </div>
+                        <div class="itemText">
+                            뽀찌님의 경숙
+                        </div>
+                    </div>
+                </div>
+                <div id="containerCenter">
+                    <div id="categoryBox">
+                        <div id="boxHead">
+                            <h3 class="boxTitle"><a href="05_review.html">방문후기</a></h3>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(1).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(2).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(3).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(4).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(5).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                        <div class="item">
+                            <a class="itemLink" href="05_review.html"><img src="image/review/review(6).jpg" width=160px/></a>
+                            <a class="itemText" href="05_review.html">sample</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="containerAside">
+                    <div id="categoryBox">
+                        <div id="boxHead">
+                            <h3 class="boxTitle"><a href="06_meeting.html">산책모임</a></h3>
+                        </div>
+                        <table border="0" width="340">
+                            <tbody>
+                                <tr>
+                                    <td class="textTitle"><a href="#">sample01</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="#">sample02</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="#">sample03</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="#">sample04</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                                <tr>
+                                    <td class="textTitle"><a href="#">sample05</a></td>
+                                    <td class="textDate">01/01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="categoryBox">
+                        <div id="boxHead">
+                            <h3 class="boxTitle"><a href="07_partyroom.html">파티룸예약</a></h3>
+                        </div>
+                        <div id="bigImgBox">
+                            <a href="07_partyroom.html">
+                                <img src="image/partyroom.jpg" width="340" height="200"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+                <p class="infoText">
+                    반려견 동반카페 / 주소 : 서울특별시 가나구 다라로12번길 34 / TEL : 02-123-4567
+                </p>
+                <p class="rightText">
+                    Copyright@ 8x8song All Rights Reserved.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
