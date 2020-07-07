@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>프롤로그 | 반 려 견 동 반 카 페</title>
+        <style>
+            * {
+                padding: 0;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            h1 {
+                font-family: "둥근모꼴";
+            }
+            body {
+                font-family: "맑은고딕";
+                margin: 0;
+                padding: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            #wrap {
+                width: 1280px;
+                background-repeat: no-repeat;
+                margin: 20px auto;
+                padding: 0px;
+                overflow: auto;
+            }
+            #top {
+                width: 1280px;
+                height: 120px;
+            }
+            #logo {
+                float: left;
+            }
+            #top1 {
+                width: 920px;
+                height: 80px;
+                text-align: right;
+                float: right;
+            }
+            .menu1 {
+                font-size : 10px;
+                margin : 0 10px;
+            }
+            .menu2 {
+                font-family: "둥근모꼴";
+                margin: 0 25px;
+            }
+            #top2 {
+                width: 920px;
+                height: 40px;
+                text-align: right;
+                float: right;
+            }
+            #main {
+                text-align: center;
+            }
+            #mainTitle {
+                padding: 25px 0 25px 0;
+                border-bottom: 1px solid #cccccc;
+                text-align: center;
+            }
+            #contents {
+                width: 1280px;
+                margin: 10px 0px;
+            }
+            .itemImg {
+                margin: 5px;
+            }
+            #footer {
+                text-align: center;
+            }
+            .infoText {
+                margin: 10px 0;
+                font-size: 12px;
+            }
+            .rightText {
+                margin: 10px 0;
+                font-size: 8px;
+            }
+        </style>
+        <style>
+            #darken-background {
+                position: absolute;
+                height: 1080px;
+                top: 0;
+                left: 0;
+                right: 0;
+                display: none;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 10000;
+                overflow-y: scroll;
+            }
+            #lightbox {
+                width: 800px;
+                margin: 100px auto;
+                padding: 15px 15px 45px 15px;
+                border: 1px solid #333333;
+                border-radius: 5px;
+                background: white;
+                box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+            }
+            .lightbox-splitter {
+                width: 800px;
+                float: left;
+                margin: 10px 0;
+            }
+            #boxtop {
+                display: block;
+            }
+            #quitBox {
+                float: right;
+            }
+            #slidebox {
+                width: 800px;
+                height: 600px;
+                display: block;
+            }
+            #leftBtn {
+                float: left;
+            }
+            #centerBox {
+                float: left;
+            }
+            .detailImg {
+                display: inline;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                float: left;
+            }
+            #rightBtn {
+                float: left;
+            }
+        </style>
+        <link href="lightbox/css/lightbox.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="lightbox/js/lightbox.js"></script>
+        <script>
+            $(document).ready(function () {
+                var imgs = new Array();
+                for (var i = 0; i < 9; i++) {
+                    imgs[i] = document.getElementById('img' + (i + 1));
+                    imgs[i].src = "image/cafe/cafe (" + (i + 1) +").jpg"
+                }
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                function showLightBox() {
+                    $('#darken-background').show();
+                    $('body').css('overflow', 'hidden');
+                }
+                function hideLightBox() {
+                    $('#darken-background').hide();
+                    $('body').css('overflow', '');
+                }
+
+                $('#quitBox').click(function (event) {
+                    hideLightBox();
+                });
+                $('.itemImg').click(function (event) {
+                    showLightBox();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                var width = $('[data-role="slider"]').attr('data-width');
+                var height = $('[data-role="slider"]').attr('data-height');
+                var count = $('[data-role="slider"] div.detailImg').length;
+                var selectedPage;
+                $('[data-role="slider"]').css({
+                    position: 'relative',
+                    overflow: 'hidden',
+                    width: width,
+                    height: height
+                }).find('.imgContainer').css({
+                    position: 'absolute',
+                    width: count * width,
+                    overflow: 'hidden'
+                }).find('.detailImg').css({
+                    width: width,
+                    height: height,
+                    float: 'left'
+                });
+                
+                var currentPage = 0;
+                var changePage = function (speed) {
+                    $('[data-role="slider"] > .imgContainer').animate({
+                        left: -currentPage * width
+                    }, speed);
+                };
+                
+                $('#img1').click(function () { selectedPage = 0; });
+                $('#img2').click(function () { selectedPage = 1; });
+                $('#img3').click(function () { selectedPage = 2; });
+                $('#img4').click(function () { selectedPage = 3; });
+                $('#img5').click(function () { selectedPage = 4; });
+                $('#img6').click(function () { selectedPage = 5; });
+                $('#img7').click(function () { selectedPage = 6; });
+                $('#img8').click(function () { selectedPage = 7; });
+                $('#img9').click(function () { selectedPage = 8; });
+                
+                $('.itemImg').click(function (event) {
+                    var imgs = new Array();
+                    for (var i = 0; i < 9; i++) {
+                        imgs[i] = document.getElementById('i' + (i + 1));
+                        imgs[i].src = "image/cafe/cafe (" + (i + 1) +").jpg"
+                    }
+                    while (currentPage < selectedPage) {
+                        currentPage = currentPage + 1;
+                        changePage(25);
+                    }
+                    while (currentPage > selectedPage) {
+                        currentPage = currentPage - 1;
+                        changePage(25);
+                    }
+                });
+                
+                $('#leftBtn').click(function () {
+                    if (currentPage > 0) {
+                        currentPage--;
+                        changePage(500);
+                    }
+                });
+                $('#rightBtn').click(function () {
+                    if (currentPage < count - 1) {
+                        currentPage++;
+                        changePage(500);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="top">
+                <a id="logo" href="index.html"><img src="image/logo.png"/></a>
+                <div id="top1">
+                    <a class="menu1" href="#">로그인</a>
+                    <a class="menu1" href="#">회원가입</a>
+                    <a class="menu1" href="#">마이페이지</a>
+                </div>
+                <div id="top2">
+                    <a class="menu2" href="01_prologue.html">프롤로그</a>
+                    <a class="menu2" href="02_notice.html">공지사항</a>
+                    <a class="menu2" href="03_location.html">오시는길</a>
+                    <a class="menu2" href="04_menu.html">카페메뉴</a>
+                    <a class="menu2" href="05_review.html">방문후기</a>
+                    <a class="menu2" href="06_meeting.html">산책모임</a>
+                    <a class="menu2" href="07_partyroom.html">파티룸예약</a>
+                </div>
+            </header>
+            <section id="main">
+                <div id="mainTitle">
+                    <h1 class="titleText">프롤로그</h1>
+                </div>
+                <div id="contents">
+                    <p class="texts"><br>겁 많은 댕댕이, 친구가 너무 좋은 댕댕이, 아직은 댕댕이와 서먹한 우리 아이도 <br><br>모두가 안전하고 즐거운 공간 카페 딩동입니다.<br><br>
+                    </p>
+                    <a class="itemImg" href="#"><img id="img1" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img2" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img3" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img4" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img5" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img6" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img7" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img8" width="400" height="400"/></a>
+                    <a class="itemImg" href="#"><img id="img9" width="400" height="400"/></a>
+                </div>            
+            </section>
+            <footer id="footer">
+                <p class="infoText">
+                    반려견 동반카페 / 주소 : 서울특별시 가나구 다라로12번길 34 / TEL : 02-123-4567
+                </p>
+                <p class="rightText">
+                    Copyright@ 8x8song All Rights Reserved.
+                </p>
+            </footer>
+        </div>
+        <div id="darken-background">
+            <div id="lightbox">
+                <hr class="lightbox-splitter" />
+                <div id="boxtop">
+                    <table border="0" width="800">
+                        <tr>
+                            <td id="boxTitle"><h1>둘러보기</h1></td>
+                            <td id="quitBox"><a href="#"><img src="image/closebox.png" width="36" height="36"/></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="slidebox">
+                    <div id="leftBtn">
+                        <a href="#"><img src="image/leftarrow.png" width="100" height="600" /></a>
+                    </div>
+                    <div id="centerBox">
+                        <div data-role="slider" data-width="600" data-height="600">
+                            <div class="imgContainer">
+                                <div class="detailImg">
+                                    <img id="i1" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i2" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i3" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i4" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i5" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i6" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i7" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i8" width="600" height="600" />
+                                </div>
+                                <div class="detailImg">
+                                    <img id="i9" width="600" height="600" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightBtn">
+                        <a href="#"><img src="image/rightarrow.png" width="100" height="600" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
