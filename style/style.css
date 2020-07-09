@@ -56,5 +56,6 @@ a {
     }
     .navbar-menu.hide {
         display: none;
+        visibility: hidden;
     }
 }
