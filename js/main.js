@@ -15,4 +15,18 @@ function initImage() {
     }
 }
 
+// 대문 영역 - 이미지 스와이프
+function initSwiper() {
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+        },
+    })
+}
+
+
 initImage();
+initSwiper();
