@@ -27,6 +27,17 @@ function initSwiper() {
     })
 }
 
+// 리뷰 영역 - 이미지 리사이징
+function setReviewImage() {
+    if($(window).width() < 1280) {
+        var columnWidth = $('.column').width();
+        var imgWidth = parseInt((columnWidth / 3) - 16);
+        $('.review-img').width(String(imgWidth) + 'px');
+    } else {
+        $('.review-img').width('120px');
+    }
+}
 
 initImage();
 initSwiper();
+setReviewImage();

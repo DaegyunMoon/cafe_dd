@@ -1,9 +1,14 @@
+:root {
+    --swiper-theme-color: #ffffff;
+}
 body {
     margin: 0;
 }
 a {
     text-decoration: none;
     color: black;
+}
+nav {
     font-family: "둥근모꼴";
 }
 .navbar {
@@ -47,14 +52,37 @@ a {
 .wrapper {
     display: flex;
     justify-content: center;
-    padding: 16px 0px;
+    padding-top: 16px;
 }
 .swiper-container {
     align-items: center;
     width: 1080px;
 }
-
-@media screen and (max-width: 1080px) {
+.contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.column {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    margin: 6px;
+}
+.column h3 {
+    padding: 8px 0px;
+    font-family: "둥근모꼴";
+}
+.column li {
+    list-style: none;
+}
+.review {
+    width: 480px;
+}
+.review ul {
+    padding-left: 16px;
+    float: left;
+}
+@media screen and (max-width: 1280px) {
     .navbar {
         flex-direction: column;
     }
@@ -73,5 +101,18 @@ a {
     }
     .main-img {
         width: 100%;
+    }
+    .column {
+        width: 100%;
+    }
+    .column img {
+        width: 100%;
+        height: auto;
+    }
+    .review {
+        width: 100%;
+    }
+    .review img {
+        height: auto;
     }
 }
