@@ -6,12 +6,11 @@ toggleBtn.addEventListener('click', () => {
     menu.classList.toggle('hide');
 });
 
-// 대문 영역 - 이미지 삽입
-function initImage() {
-    var imgs = new Array();
-    for (var i = 0; i < 4; i++) {
-        imgs[i] = document.getElementById('img' + (i + 1));
-        imgs[i].src = "image/main0" + (i + 1) + ".jpg";
+// 이미지 삽입
+function initImage(name) {
+    var imgs = document.getElementsByClassName(name + '-img');
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].src = "image/" + name + "/" + name + " (" + (i + 1) + ").jpg";
     }
 }
 
@@ -31,13 +30,14 @@ function initSwiper() {
 function setReviewImage() {
     if($(window).width() < 1280) {
         var columnWidth = $('.column').width();
-        var imgWidth = parseInt((columnWidth / 3) - 16);
+        var imgWidth = parseInt((columnWidth / 3) - 20);
         $('.review-img').width(String(imgWidth) + 'px');
     } else {
-        $('.review-img').width('120px');
+        $('.review-img').width('135px');
     }
 }
 
-initImage();
+initImage('main');
+initImage('review');
 initSwiper();
 setReviewImage();
