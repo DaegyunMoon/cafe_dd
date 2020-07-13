@@ -36,8 +36,3 @@ function setReviewImage() {
         $('.review-img').width('135px');
     }
 }
-
-initImage('main');
-initImage('review');
-initSwiper();
-setReviewImage();

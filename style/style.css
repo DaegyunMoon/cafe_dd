@@ -57,17 +57,21 @@ nav {
 }
 .main-title {
     text-align: center;
+    padding: 0 10px;
 }
 .title-text {
-    padding: 25px 0 25px 0;
+    padding: 25px 0;
     font-family: "둥근모꼴";
     border-bottom: 1px solid #cccccc;
+}
+.cafe-img {
+    padding: 4px;
 }
 .contents {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}\
+}
 .column {
     border: 1px solid #cccccc;
     padding: 8px;
@@ -124,6 +128,10 @@ nav {
         width: 100%;
     }
     .review img {
+        height: auto;
+    }
+    .cafe-img {
+        width: 30%;
         height: auto;
     }
 }
