@@ -5,9 +5,6 @@ a {
     text-decoration: none;
     color: black;
 }
-h {
-    font-family: "둥근모꼴";
-}
 nav {
     font-family: "둥근모꼴";
 }
@@ -58,11 +55,19 @@ nav {
     align-items: center;
     width: 1080px;
 }
+.main-title {
+    text-align: center;
+}
+.title-text {
+    padding: 25px 0 25px 0;
+    font-family: "둥근모꼴";
+    border-bottom: 1px solid #cccccc;
+}
 .contents {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+}\
 .column {
     border: 1px solid #cccccc;
     padding: 8px;
