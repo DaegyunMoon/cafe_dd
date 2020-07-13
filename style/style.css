@@ -5,6 +5,9 @@ a {
     text-decoration: none;
     color: black;
 }
+h {
+    font-family: "둥근모꼴";
+}
 nav {
     font-family: "둥근모꼴";
 }
