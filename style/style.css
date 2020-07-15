@@ -78,6 +78,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 .column {
     border: 1px solid #cccccc;
@@ -97,6 +98,61 @@ nav {
 .review ul {
     padding-left: 16px;
     float: left;
+}
+.menu {
+    padding: 40px 80px;
+    width: 400px;
+    margin: 6px;
+}
+.menu h3 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #cccccc;
+    font-family: "둥근모꼴";
+    text-align: center;
+}
+.menu ul {
+    padding-left: 0px;
+}
+.menu li {
+    list-style: none;
+}
+.menu span {
+    display: inline-block;
+}
+.menu .name {
+    width: 120px;
+}
+.menu .type {
+    width: 220px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: right;
+}
+.menu .price {
+    padding-left: 8px;
+}
+.paper {
+    width: 348px;
+    margin: 17px;
+    padding: 15px 15px 0;
+    font-size: 11px;
+    background: #FFFFFF;
+    border : 1px solid #cccccc;
+}
+.paper-info {
+    margin: 10px 0;
+}
+.paper-text {
+    margin: 0 -15px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #F2F0F0;
+    overflow: hidden;
+}
+.paperText {
+    float: left;
+    width: 300px;
+    margin-left: 10px;
 }
 .footer {
     display: flex;
@@ -124,12 +180,20 @@ nav {
     .main-img {
         width: 100%;
     }
+    .contents {
+        justify-content: space-around;
+    }
     .column {
         width: 100%;
     }
     .column img {
         width: 100%;
         height: auto;
+    }
+    .menu {
+        padding: 40px 0px;
+        width: 400px;
+        margin: 6px;
     }
     .review {
         width: 100%;
@@ -138,7 +202,8 @@ nav {
         height: auto;
     }
     .cafe-img {
-        width: 30%;
+        padding: 2px 0px;
+        width: 33%;
         height: auto;
     }
     #map-view {
