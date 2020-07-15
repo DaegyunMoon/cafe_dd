@@ -59,6 +59,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 0 10px;
 }
 .title-text {
@@ -141,7 +142,7 @@ nav {
         height: auto;
     }
     #map-view {
-        width: 480px;
-        height: 720px;
+        width: 75%;
+        height: 480px;
     }
 }
