@@ -1,12 +1,17 @@
-body {
-    margin: 0;
+@font-face {
+    font-family: "DungGeunMo";
+    src: url(/font/DungGeunMo.ttf);
+    src: url(/font/DungGeunMo.eot) format('embedded-opentype'), 
+		url(/font/DungGeunMo.woff) format('woff'),
+		url(/font/DungGeunMo.ttf) format('truetype');
+	src: local(※), url(/font/DungGeunMo.woff) format('woff');
 }
 a {
     text-decoration: none;
     color: black;
 }
 nav {
-    font-family: "둥근모꼴";
+    font-family: "DungGeunMo";
 }
 .navbar {
     display: flex;
@@ -63,7 +68,7 @@ nav {
 }
 .title-text {
     padding: 25px 0;
-    font-family: "둥근모꼴";
+    font-family: "DungGeunMo";
     border-bottom: 1px solid #cccccc;
 }
 .cafe-img {
@@ -86,7 +91,7 @@ nav {
 }
 .column h3 {
     padding: 8px 0px;
-    font-family: "둥근모꼴";
+    font-family: "DungGeunMo";
 }
 .column li {
     list-style: none;
@@ -106,7 +111,7 @@ nav {
 .menu h3 {
     padding-bottom: 8px;
     border-bottom: 1px solid #cccccc;
-    font-family: "둥근모꼴";
+    font-family: "DungGeunMo";
     text-align: center;
 }
 .menu ul {
@@ -131,14 +136,18 @@ nav {
     padding-left: 8px;
 }
 .paper {
-    width: 348px;
-    margin: 17px;
+    width: 340px;
+    margin: 15px;
     padding: 15px 15px 0;
-    font-size: 11px;
+    font-size: 12px;
     background: #FFFFFF;
     border : 1px solid #cccccc;
 }
+.paper .review-img {
+    width: 100%;
+}
 .paper-info {
+    font-weight: bold;
     margin: 10px 0;
 }
 .paper-text {
@@ -168,6 +177,10 @@ nav {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        font-size: 24pt;
+    }
+    .navbar-menu li {
+        padding: 16px 12px;
     }
     .navbar-menu.hide {
         display: none;
@@ -185,14 +198,48 @@ nav {
     .column {
         width: 100%;
     }
+    .column h3 {
+        font-size: 20pt;
+    }
+    .column li {
+        font-size: 16pt;
+        padding-bottom: 8px;
+    }
     .column img {
         width: 100%;
         height: auto;
     }
     .menu {
-        padding: 40px 0px;
-        width: 400px;
-        margin: 6px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu .title {
+        margin: 0px;
+        width: inherit;
+        font-size: 135%;
+    }
+    .menu ul {
+        margin: 0px;
+        width: inherit;
+    }
+    .menu span {
+        font-size: 125%;
+    }
+    .menu .name {
+        width: 33%;
+    }
+    .menu .type {
+        width: 57%;
+        font-size: 100%;
+    }
+    .menu .price {
+        text-align: right;
+    }
+    .paper {
+        width: 80%;
+        font-size: 150%;
     }
     .review {
         width: 100%;
@@ -208,5 +255,8 @@ nav {
     #map-view {
         width: 75%;
         height: 480px;
+    }
+    .footer {
+        font-size: 100%;
     }
 }
