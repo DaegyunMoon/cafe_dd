@@ -1,7 +1,7 @@
 
 var mapOptions = {
     center : new naver.maps.LatLng(37.827686, 127.137600),
-    zoom : 10,
+    zoom : 20,
     minZoom : 1,
     zoomControl : true,
     zoomControlOptions : {
@@ -16,7 +16,7 @@ function initMap() {
         map: map,
         icon: {
             content: '<img src="image/marker.png"/>',
-            size: new naver.maps.Size(70, 74),
+            size: new naver.maps.Size(30, 36),
             anchor: new naver.maps.Point(25, 86)
         }
     });

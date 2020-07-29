@@ -263,7 +263,8 @@ nav {
         height: auto;
     }
     #map-view {
-        width: 75%;
+        padding: 10px 0px;
+        width: 90%;
         height: 480px;
     }
     .footer {
