@@ -59,6 +59,9 @@ nav {
     align-items: center;
     width: 1080px;
 }
+.swiper-button-prev, .swiper-button-next {
+    top: auto !important;
+}
 .main-title {
     display: flex;
     flex-direction: column;

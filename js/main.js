@@ -23,6 +23,10 @@ function initSwiper() {
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
         },
+        autoplay: {
+            delay: 2500, // ms
+            disableOnInteraction: false, 
+        },
     })
 }
 
